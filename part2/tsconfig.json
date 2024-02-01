@@ -1,0 +1,30 @@
+{
+    /*
+    tsconfig.json 是ts编译器的配置文件，ts编译器可以根据它的信息来对代码进行编译
+        "include" 用来指定哪些ts文件需要被编译,
+        /**表示任意目录
+        /*表示任意文件
+    */
+    "include": [
+        "./src/**/*"
+    ],
+    "exclude": [
+        "./src/exFile.ts"
+    ],
+    /*
+        compilerOptions编译器的选项
+    */
+    "compilerOptions": {
+        // target用来指定ts被编译为的ES的版本: es3/5/6/2015/2016/2017/2018/2019/2020/next
+        "target": "es6",
+        // module 指定要使用的模块化的规范
+        "module": "system",
+        // lib 用来指定项目中要使用的库，默认为浏览器运行环境的库，一般不配置
+        // "lib": ["es6", "dom"]
+        // 用来指定编译后文件所在的目录
+        "outDir": "./dist",
+        // 将代码合并为一个文件
+        // 设置outFile后，所有的全局作用域中的代码会合并到同一个文件中
+        "outFile": "./dist/app.js"
+    }
+}

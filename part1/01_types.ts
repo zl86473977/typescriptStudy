@@ -44,3 +44,5 @@ function fun(num) {
         return true
     }
 }
+
+export default {e}
