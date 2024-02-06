@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log(579),console.log("haha"),console.log("hi:","你好");const o={name:"孙悟空",age:111};console.log(o),o.age=18,console.log(o)})();
