@@ -14,7 +14,8 @@ module.exports = {
     filename: "bundle.js",
     // 告诉webpack不使用箭头函数
     environment: {
-      arrowFunction: false
+      arrowFunction: false,
+      const: false
     }
   },
   mode: "production",
@@ -60,6 +61,31 @@ module.exports = {
         // 要排除的文件
         exclude: /node_modules/,
       },
+      // 设置less文件的处理
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          // 引入postcss
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      browsers: 'last 2 version'
+                    }
+                  ]
+                ]
+              }
+            }
+          },
+          "less-loader"
+        ] 
+      }
     ],
   },
   // 配置webpack插件
